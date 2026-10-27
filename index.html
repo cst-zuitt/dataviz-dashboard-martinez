@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Data Insights Dashboard</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-fixed-variant":"#00504a","on-surface":"#0b1c30","on-surface-variant":"#3e4947","inverse-primary":"#80d5cb","surface-bright":"#f8f9ff","on-error-container":"#93000a","surface-dim":"#cbdbf5","outline-variant":"#bdc9c6","on-error":"#ffffff","secondary-fixed":"#dae2fd","secondary-fixed-dim":"#bec6e0","surface-container-lowest":"#ffffff","on-primary":"#ffffff","on-tertiary-fixed":"#2f1500","primary-fixed-dim":"#80d5cb","surface-container-high":"#dce9ff","primary-fixed":"#9cf2e8","secondary-container":"#dae2fd","on-primary-fixed":"#00201d","primary-container":"#0f766e","surface":"#f8f9ff","background":"#f8f9ff","on-background":"#0b1c30","on-secondary-fixed-variant":"#3f465c","on-secondary":"#ffffff","inverse-on-surface":"#eaf1ff","outline":"#6e7977","on-tertiary-container":"#ffe6d5","surface-variant":"#d3e4fe","on-primary-container":"#a3faef","secondary":"#565e74","on-tertiary":"#ffffff","on-secondary-container":"#5c647a","tertiary-fixed":"#ffdcc3","surface-container-low":"#eff4ff","error":"#ba1a1a","on-secondary-fixed":"#131b2e","surface-container-highest":"#d3e4fe","on-tertiary-fixed-variant":"#6e3900","tertiary-fixed-dim":"#ffb77d","error-container":"#ffdad6","inverse-surface":"#213145","surface-container":"#e5eeff","tertiary":"#7d4200","tertiary-container":"#a15600","surface-tint":"#006a63","primary":"#005c55"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-sm":"0.5rem",margin:"2rem","space-md":"1rem",gutter:"1.5rem","space-xl":"2rem","space-xs":"0.25rem","gutter-mobile":"0.75rem","margin-mobile":"1rem","space-lg":"1.5rem"},fontFamily:{"body-md":["Inter"],"body-lg":["Inter"],"label-sm":["Inter"],"headline-lg-mobile":["Inter"],"label-md":["Inter"],"headline-lg":["Inter"],"body-sm":["Inter"],"metric-value":["Inter"],"headline-sm":["Inter"],"display-lg":["Inter"],"headline-md":["Inter"]},fontSize:{"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}],"headline-lg-mobile":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"label-md":["13px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"500"}],"headline-lg":["30px",{lineHeight:"38px",letterSpacing:"-0.02em",fontWeight:"600"}],"body-sm":["12px",{lineHeight:"16px",fontWeight:"400"}],"metric-value":["28px",{lineHeight:"32px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-sm":["18px",{lineHeight:"24px",letterSpacing:"-0.01em",fontWeight:"600"}],"display-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.025em",fontWeight:"700"}],"headline-md":["22px",{lineHeight:"28px",letterSpacing:"-0.015em",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-inverse-surface"><div class="h-16 w-full max-w-[1600px] mx-auto px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><span class="text-inverse-on-surface font-headline-sm font-semibold tracking-tight">Data Insights Dashboard</span></div><div class="flex items-center gap-space-md"><span class="text-outline-variant font-label-md uppercase tracking-wider">Dataset</span><div class="relative flex items-center"><select id="dataset-select" class="bg-inverse-surface text-inverse-on-surface px-space-md py-space-xs rounded border border-outline-variant/30 cursor-pointer font-body-md font-medium outline-none"></select></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-4rem)]"><div class="w-full max-w-[1600px] mx-auto px-gutter py-space-xl"><div class="flex flex-col w-full">
+<!-- Top Intro Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl pb-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm uppercase tracking-wider">
+          Ledger Validated
+        </span>
+<span class="text-outline text-label-sm font-label-sm uppercase tracking-widest">•</span>
+<span class="text-outline text-label-sm font-label-sm">Q1 Ingestion</span>
+</div>
+<h1 id="dataset-title" class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight"></h1>
+<p id="dataset-description" class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl"></p>
+</div>
+<div class="flex items-center">
+<a id="dataset-source" class="group inline-flex items-center gap-space-xs font-label-md text-label-md text-primary font-medium hover:text-on-primary-fixed-variant transition-colors py-space-xs px-space-sm rounded hover:bg-surface-container" href="#" rel="noopener noreferrer" target="_blank">
+<span class="underline decoration-primary/40 underline-offset-4 group-hover:decoration-primary">View source on Kaggle</span>
+<span class="material-symbols-outlined text-[16px] text-primary transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">open_in_new</span>
+</a>
+</div>
+</div>
+<!-- Summary Cards Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Records analyzed</span>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">dataset</span>
+</div>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span id="kpi-records" class="font-metric-value text-metric-value text-on-surface font-bold tracking-tight"></span>
+<span class="inline-flex items-center text-label-sm font-label-sm text-on-surface-variant bg-surface-container-low px-space-xs py-0.5 rounded">
+          100% parsed
+        </span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<span id="kpi-total-label" class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold"></span>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">payments</span>
+</div>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span id="kpi-total" class="font-metric-value text-metric-value text-on-surface font-bold tracking-tight"></span>
+<span class="inline-flex items-center text-label-sm font-label-sm text-primary font-medium bg-primary-fixed/30 px-space-xs py-0.5 rounded">
+          USD
+        </span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Top category</span>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">local_mall</span>
+</div>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span id="kpi-top" class="font-headline-md text-headline-md text-on-surface font-bold truncate tracking-tight"></span>
+<span class="inline-flex items-center text-label-sm font-label-sm text-on-surface-variant bg-surface-container-low px-space-xs py-0.5 rounded">
+          17.4%
+        </span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Rows skipped (bad data)</span>
+<span class="material-symbols-outlined text-tertiary text-[20px]">verified</span>
+</div>
+<div class="flex items-baseline justify-between mt-space-xs">
+<span id="kpi-skipped" class="font-metric-value text-metric-value text-tertiary font-bold tracking-tight"></span>
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-tertiary bg-tertiary-fixed/30 px-space-xs py-0.5 rounded font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+          Clean
+        </span>
+</div>
+</div>
+</div>
+<!-- Two Side-by-Side Chart Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter mb-space-xl">
+<!-- Left Card: Horizontal Bar Chart Wireframe -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-space-lg">
+<div class="flex flex-col">
+<h2 id="chart-category-title" class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight"></h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Aggregate gross volume distributed across catalog sectors</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Export Segment Data" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+<!-- Horizontal Bar Chart Area (360px height) -->
+<div style="position:relative;height:360px"><canvas id="chart-category"></canvas></div>
+</div>
+<!-- Right Card: Line Chart Wireframe -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-space-lg">
+<div class="flex flex-col">
+<h2 id="chart-trend-title" class="font-headline-sm text-headline-sm text-on-surface font-semibold tracking-tight"></h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Diurnal transaction volume distribution (10:00 - 20:00)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="p-1 rounded text-outline hover:text-on-surface hover:bg-surface-container transition-colors" title="Export Hourly Range" type="button">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+</div>
+</div>
+<!-- Line Chart Area (360px height) -->
+<div style="position:relative;height:360px"><canvas id="chart-trend"></canvas></div>
+</div>
+</div>
+<!-- Centered Footer Subtitle Reference -->
+<div class="w-full text-center py-space-sm mt-space-md">
+<p class="font-body-sm text-body-sm text-outline">
+      Built with Chart.js + PapaParse · Data from Kaggle · AI-assisted, human-verified
+    </p>
+</div>
+</div></div></main><footer class="w-full bg-surface-container-low border-t border-outline-variant/20 py-space-md"><div class="w-full max-w-[1600px] mx-auto px-gutter flex items-center justify-between text-on-surface-variant font-body-sm"><span>© 2024 Data Insights Dashboard. All rights reserved.</span><span class="font-label-sm uppercase tracking-wider text-outline">Operational Analytics Ledger</span></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="data/supermarket.js"></script>
+<script src="data/videogames.js"></script>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body></html>
